@@ -219,7 +219,7 @@ class _NewProductListPageState extends State<NewProductListPage> {
 
   Future<void> _fetchBelow1000AndBrand(String selectedBrandName) async {
     List<int> receivedId = widget.carosalcatid;
-
+    
     int? brandId = findBrandId(selectedBrandName);
     print("brandId with rate :$brandId");
     setState(() async {
@@ -1575,7 +1575,7 @@ class _NewProductListPageState extends State<NewProductListPage> {
                                     child: Column(
                                       children: List.generate(
                                         responseCategory.length,
-                                        (index) {
+(index) {
                                           final brandName =
                                               responseCategory[index]
                                                   ["brandName"];
