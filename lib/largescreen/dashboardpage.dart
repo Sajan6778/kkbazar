@@ -317,7 +317,7 @@ class _MyScrollableColumnState extends State<MyScrollableColumn>
   PageController _pageControllermeat = PageController();
   int currentPagemeat = 0;
   int itemsPerPagemeat = 4;
-
+  
   @override
   void disposemeat() {
     _pageControllermeat.dispose();
@@ -1184,8 +1184,11 @@ class _MyScrollableColumnState extends State<MyScrollableColumn>
                         } else {
                           return GestureDetector(
                             onTap: () {},
-                            child: Container(
-                              width: 320,
+                            child:Container(height: 60,width: screenSize.width,child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+Container(
+                              width: screenSize.width*0.25,
                               height: 77,
                               decoration: BoxDecoration(
                                 color: Color(0xffef8f21),
@@ -1201,13 +1204,13 @@ class _MyScrollableColumnState extends State<MyScrollableColumn>
                                     dropdownColor: Color(0xffef8f21),
                                     value: selectedValue,
                                     icon: Container(
-                                        margin: EdgeInsets.only(left: 30.0),
-                                        child: Icon(Icons.menu,
-                                            size: 25.0, color: Colors.white)),
+                                        margin: EdgeInsets.only(left: 20.0),
+                                        child:FittedBox(child: Icon(Icons.menu,
+                                            size: screenSize.width*0.02, color: Colors.white) ,)),
                                     hint: Text(
                                       "All Categories",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 22),
+                                          color: Colors.white, fontSize: screenSize.width*0.02),
                                     ),
                                     items: snapshot.data!.map((e) {
                                       return DropdownMenuItem<String>(
@@ -1249,12 +1252,9 @@ class _MyScrollableColumnState extends State<MyScrollableColumn>
                                 ),
                               ),
                             ),
-                          );
-                        }
-                      },
-                    ),
-                    Container(
-                      width: 820,
+Container(
+                                                  width: screenSize.width*0.50,
+
                       height: 77,
                       decoration: BoxDecoration(
                         color: Color(0x0c9c271b),
@@ -1288,8 +1288,9 @@ class _MyScrollableColumnState extends State<MyScrollableColumn>
                       //   ],
                       // ),
                     ),
-                    Container(
-                      width: 298,
+Container(
+                                                   width: screenSize.width*0.25,
+
                       height: 77,
                       decoration: BoxDecoration(
                         color: Color(0xffef8f21),
@@ -1308,6 +1309,14 @@ class _MyScrollableColumnState extends State<MyScrollableColumn>
                         ],
                       ),
                     ),
+
+                            ],),) 
+                          );
+                        }
+                      },
+                    ),
+                    
+                    
                   ],
                 ),
               ),
